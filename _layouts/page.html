@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}Diaoscovery探索频道</title>
+        <meta name="description" content="{{ page.description }}"/>
+        <meta name="robots" content="index,follow,archive"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="stylesheet" href="/diaoscovery/styles/all.css"/>
+        <link rel="stylesheet" href="/diaoscovery/styles/syntax.css"/>
+        <link rel="icon" href="/diaoscovery/images/favicon.png" type="image/png"/>
+    </head>
+    <body>
+        <header class="interior-site-header">
+            <div class="site-title"><a href="/diaoscovery/">Diaoscovery探索频道</a></div><br>
+            <a class="btn btn-h" href="/diaoscovery/">返回首页</a>
+            <a class="fork-me" href="https://github.com/suziewong/diaoscovery">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+            </a>
+        </header>
+        <div class="interior-site-content">
+            {{ content }}
+            <footer class="site-footer" id="site-footer">
+                <p>
+                   Powered By <a href='http://www.jekyllrb.com/'>Jekyll</a> and Theme by <a href='http://wulijun.github.io/php-the-right-way/'>PHP-the-right-way</a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

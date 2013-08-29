@@ -1,0 +1,16 @@
+---
+layout: default
+description: "diaoscovery"
+---
+
+{% capture welcome_content %}{% include welcome.md %}{% endcapture %}
+{{ welcome_content|markdownify }}
+
+{% capture backtotop %}[Back to Top](#top){.top}{% endcapture %}
+{% for post in site.posts reversed %}
+    {% if post.isChild != true and loop.first != true %}
+    {{ backtotop|markdownify }}
+    {% endif %}
+    {{ post.content }}
+{% endfor %}
+{{ backtotop|markdownify }}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}Diaoscovery探索</title>
+        <meta name="description" content="{{ page.description }}"/>
+        <meta name="robots" content="index,follow,archive"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="stylesheet" href="styles/all.css"/>
+        <link rel="stylesheet" href="styles/print.css" media="print, handheld"/>
+        <link rel="stylesheet" href="styles/syntax.css"/>
+        <link rel="icon" href="images/favicon.png" type="image/png"/>
+        
+    </head>
+    <body>
+        <nav class="site-navigation">
+            <div class="build-date">Last Updated: {{ site.time }}</div>
+            <ul>
+                <li><a href="/diaoscovery#site-header">Welcome</a></li>
+                {% assign lastIsChild = false %}
+                {% for post in site.posts reversed %}
+                    {% if post.isChild and lastIsChild != true %}<ul>{% endif %}
+                    {% if lastIsChild and post.isChild != true %}</ul>{% endif %}
+                    {% if post.anchorid %}
+                    <li><a href="/diaoscovery#{{ post.anchorid }}">{{ post.title }}</a>
+                    {% else %}
+                    <li><a href="/diaoscovery#{{ post.title | downcase | replace:' ','_' | replace:'(','' | replace:')','' | replace:'.','' | replace:'-','' }}">{{ post.title }}</a>
+                    {% endif %}                                        
+                    {% assign lastIsChild = post.isChild %}
+                {% endfor %}
+
+                
+                <li><a href="/diaoscovery#site-footer">项目声明</a></li>
+            </ul>
+        </nav>
+        <div class="site-content">
+            <a class="fork-me" href="https://github.com/suziewong/diaoscovery">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+            </a>
+            <header class="site-header" id="site-header">
+                <hgroup>
+                    <h1 class="site-title"><a href="/diaoscovery">Diaoscovery探索频道</a></h1>
+                </hgroup>
+                整理制作：<a href="http://www.imsuzie.com" target="_blank">suziewong</a>
+            </header>
+            {{ content }}
+            <footer class="site-footer" id="site-footer">
+                <!-- UY BEGIN -->
+                <div id="uyan_frame"></div>
+                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1813282"></script>
+                <!-- UY END -->
+                <p>
+                    Powered By <a href='http://www.jekyllrb.com/'>Jekyll</a> and Theme by <a href='http://wulijun.github.io/php-the-right-way/'>PHP-the-right-way</a>
+                    <script src="http://s17.cnzz.com/stat.php?id=5518890&web_id=5518890&show=pic1" language="JavaScript"></script>
+                </p>
+            </footer>
+        </div>
+
+        <!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+        <script src="scripts/setup.js"></script>
+    </body>
+</html>
