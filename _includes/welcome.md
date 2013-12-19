@@ -3,12 +3,12 @@
 1. What is Diaoscovery？
 	
 	
-	> a project to help millions of people.
+	> 记录一个人是如何通过社交网络成长的.
 
 
 2. Why did I start this project？
 
-	> just for fun.
+	> ...
 
 ### 关于本项目
 
